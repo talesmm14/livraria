@@ -1,0 +1,25 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/layout.xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:define name="content">
+		<h:dataTable var="produto" value="#{vitrineController.listaProduto}" style="width: 100%">
+			<h:column>
+				<p:panel id="basic" header="Basic" footer="Movie Details"
+					style="margin-bottom:20px">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:column>
+							<p:graphicImage width="30%" name="#{produto.nome}" />
+						</h:column>
+						<h:column>
+							<h:outputText value="#{produto.valor}" />
+						</h:column>
+					</h:panelGrid>
+				</p:panel>
+			</h:column>
+		</h:dataTable>
+	</ui:define>
+
+</ui:composition>
