@@ -17,7 +17,6 @@ import javax.validation.constraints.Size;
 @Table(name = "produto_model")
 
 public class ProdutoModel implements Serializable {
-
 	   
 	@Id
 	@GeneratedValue
@@ -28,9 +27,14 @@ public class ProdutoModel implements Serializable {
 	private String nome;
 	
 	@NotEmpty
+	private String caminho;
+	
 	private Double valor;
+	
+	@NotEmpty
+	private String descricao;
 	private static final long serialVersionUID = 1L;
-
+	
 	public ProdutoModel() {
 		super();
 	}   
@@ -47,7 +51,17 @@ public class ProdutoModel implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}   
+	}
+	
+	public String getCaminho() {
+		return caminho;
+	}
+	
+	public void setCaminho(String caminho) {
+		caminho = "images/produto/" + caminho;
+		this.caminho = caminho;
+	}
+	
 	public Double getValor() {
 		return this.valor;
 	}
@@ -55,5 +69,12 @@ public class ProdutoModel implements Serializable {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
-   
+	
+	public String getDescricao() {
+		return descricao;
+	}
+	
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 }

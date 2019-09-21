@@ -1,0 +1,38 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/layout.xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:define name="content">
+		<br />
+		<div class="container" style="border: 1px solid black; width: 60%">
+			<h:form>
+				<div>
+					<h:messages globalOnly="true" />
+				</div>
+
+				<h5>Titulo do livro</h5>
+				<p:inputText value="#{cadastrarProdutoController.produto.nome}"
+					style="width: 100%;" />
+				<br />
+				<br />
+				<h5>Valor</h5>
+				<p:inputNumber value="#{cadastrarProdutoController.produto.valor}"
+					symbol="R$ " decimalSeparator="," thousandSeparator=".">
+				</p:inputNumber>
+
+				<br />
+				<br />
+				<h5>Sinopse</h5>
+				<p:inputTextarea style="width: 100%;" rows="6" />
+
+				<p:commandButton value="Cadastrar Livro"
+					actionListener="#{cadastrarProdutoController.cadastrarLivro()}"
+					style="margin-left:70%; width: 30%" />
+			</h:form>
+		</div>
+
+	</ui:define>
+
+</ui:composition>

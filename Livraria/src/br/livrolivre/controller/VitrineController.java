@@ -36,7 +36,7 @@ public class VitrineController {
 		if (produto == null) {
 			produto = new ProdutoModel();
 		}
-		produto.setNome("images/produto/livro1.jpg");
+		produto.setNome("images/produto/image.png");
 		produto.setValor(10.00);
 		
 		return produto;
